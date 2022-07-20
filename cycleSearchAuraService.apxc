@@ -1,0 +1,18 @@
+public class cycleSearchAuraService {
+    @AuraEnabled
+    public static List<sObject> searchcycle(String searchparam){
+        String likeparam = '%' +searchparam+'%';
+                String query = '';
+
+        if(searchparam != null){
+            query='Select Name,Brand_Name__c,Model_Name__c,Quantity__c,Age_Group__c,Gear__c,Price__c	 from Product_Detail__c Where Model_Name__c Like:likeparam LIMIT 10';
+        }
+        else{
+            query='select Name,Brand_Name__c,Model_Name__c,Quantity__c,Age_Group__c,Gear__c,Price__c	 from Product_Detail__c  LIMIT 10';
+
+        }
+        List<sObject> sObjectList = Database.query(query);
+        return sObjectList;
+    }
+
+}
