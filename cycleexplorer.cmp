@@ -1,0 +1,13 @@
+<aura:component implements = "force:appHostable,lightning:isurlAddressable" controller = "cycleSearchAuraService" >
+    <aura:handler name ="cycleevent" event = "c:searchcycle" action = "{!c.handleCompEvent}"/>
+    <aura:handler name = "init" value="{!this}" action="{!c.handleCompEvent}"/>
+    <aura:attribute name = "cyclelist" type = "object"/>
+    <div>
+        <c:HeaderComponent TagLine = " Red Rocks Cycle Explorer" message = "Search Cycles in Red Rock Cycles !"/>
+    </div>
+    <div>
+        <c:cyclesearch /></div>
+    <div>
+        <c:cyclelist recordList = "{!v.cyclelist}"/></div>
+	
+</aura:component>
