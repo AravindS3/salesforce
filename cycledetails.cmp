@@ -1,0 +1,12 @@
+<aura:component >
+    <aura:attribute name ="cycleId" type = "String"/>
+    <div class = "slds-p-around_small">
+        <lightning:recordForm
+                              recordId = "{!v.cycleId}"
+                              objectApiName = "Product_Detail__c"
+                              layoutType = "Full"
+                              columns = "3"
+                              mode = "readonly"/>
+    </div>
+	
+</aura:component>
