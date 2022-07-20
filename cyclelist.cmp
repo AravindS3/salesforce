@@ -1,0 +1,35 @@
+<aura:component >
+    <aura:attribute name = "recordList" type = "object"/>
+    <lightning:overlayLibrary aura:id = "overLayLib"/>
+        <aura:attribute name = "cycleId" type = "String"/>
+
+	<div>    
+    <div class = "slds-grid slds-wrap">
+        <aura:iteration items ="{!v.recordList}" var = "item">
+            <div class = "slds-col slds-size_1-of-2 slds-p-around_small">
+                <lightning:card title ="{!item.Model_Name__c}" footer = "{!item.Gear__c }"
+                                iconName = "custom:custom80">
+                    <p class = "slds-p-horizontal_small">
+                        <div class ="slds-grid slds-gutters">
+                            <div class="slds-col slds-size_2-of-5">
+                                <img src = "{!$Resource.redrocks}"/>
+                            </div>
+                            <div class = "slds-col slds-size_2-of-3">
+                                BrandName: {!item.Brand_Name__c} <br/>
+                                ModelName: {!item.Model_Name__c}<br/>
+                                Quantity: {!item.Quantity__c}<br/>
+                                Price: {!item.Price__c}
+                            </div>
+                        </div>
+                    </p>
+                    <aura:set attribute = "actions">
+                        <lightning:button name="{!item.Id}" label = "View Details" value ="View Details"
+                                           variant = "brand" onclick = "{!c.showInfo}"/>
+                    </aura:set>
+                </lightning:card>
+            </div>
+        </aura:iteration>
+    </div>
+        
+    </div>
+</aura:component>
