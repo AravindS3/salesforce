@@ -1,0 +1,17 @@
+<aura:component >
+    <aura:registerEvent name = "cycleevent" type ="c:searchcycle"/>
+             <div class = "slds-p-around_small">
+        
+    <lightning:input
+                     name = "inline-search-input"
+                     label = "Search For Cycle Models"
+                     type = "search"
+                     varient = "label-hidden"
+                     coloumn = "2"
+                     aura:id = "searchInput"
+                     onchange = "{!c.dosearch}"
+                     />
+        
+    </div>
+	
+</aura:component>
